@@ -16,6 +16,7 @@ import './styles.scss';
 export default function Home() {
   const [apiEpisodes, setApiEpisodes] = useState(null as any);
   const [apiPodcasts, setApiPodcasts] = useState(null as any);
+  const [isLoading, setIsLoading] = useState(true);
   const [query, SetQuery] = useState('');
 
   useEffect(() => {
@@ -23,6 +24,7 @@ export default function Home() {
   }, []);
 
   const handleAPIData = (data: any) => {
+    setIsLoading(true);
     const values = Object.values(data)[0] as any;
     const podcasts = values.findIndex(
       (val: any) => val.slug === 'shows'
@@ -47,7 +49,8 @@ export default function Home() {
     )
       .then((res) => res.json())
       .then((data) => handleAPIData(data))
-      .catch((e) => console.error('error', e));
+      .catch((e) => console.error('error', e))
+      .finally(() => setIsLoading(false));
   };
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -62,11 +65,19 @@ export default function Home() {
     <div className="drawer md:drawer-open left-sidebar">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content">
-        <Header handleSearchData={handleSearchData} />
-        <div className="main-content">
-          <TopPodcasts apiPodcasts={apiPodcasts} query={query} />
-          <TopEpisodes apiEpisodes={apiEpisodes} query={query} />
-        </div>
+        {isLoading ? (
+          <div className="w-full h-full	flex justify-center">
+            <span className="loading loading-ring loading-lg"></span>
+          </div>
+        ) : (
+          <>
+            <Header handleSearchData={handleSearchData} />
+            <div className="main-content">
+              <TopPodcasts apiPodcasts={apiPodcasts} query={query} />
+              <TopEpisodes apiEpisodes={apiEpisodes} query={query} />
+            </div>
+          </>
+        )}
       </div>
       <div className="drawer-side">
         <label
