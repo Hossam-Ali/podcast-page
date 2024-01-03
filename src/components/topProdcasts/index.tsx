@@ -247,7 +247,7 @@ export const TopProdcasts = () => {
                         <a className="name">{val.name}</a>
                         <h5 className="author">{val.sing}</h5>
                       </div>
-                      {/* <Dropdown items={dropdownResultsItems} /> */}
+                      <Dropdown items={dropdownResultsItems} />
                     </div>
                   </div>
                 );

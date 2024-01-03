@@ -2,8 +2,10 @@
   top: 0;
   vertical-align: middle;
 
-  .btn {
+  .btn-dropdown {
+    cursor: pointer;
     background: transparent;
+    display: inline-block !important;
   }
 
   .dropdown-content {
@@ -21,6 +23,7 @@
     box-shadow: rgba(255, 255, 255, 0.2) 0px 1px 1px inset,
       rgba(23, 24, 38, 0.5) 0px 5px 5px;
     border-radius: 5px;
+
     &:after {
       bottom: 100%;
       right: 10px;

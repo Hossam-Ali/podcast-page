@@ -20,7 +20,7 @@ export const Header = () => {
     'Privacy Settings',
     'divider',
     'Contact & Feedback',
-    'lear Data...',
+    'Clear Data...',
   ];
 
   useEffect(() => {
