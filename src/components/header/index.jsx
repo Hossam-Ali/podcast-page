@@ -25,6 +25,7 @@ export const Header = () => {
 
   useEffect(() => {
     const getCurrentWidth = () => window.innerWidth;
+    setScreenSize(getCurrentWidth());
 
     const updateDimension = () => setScreenSize(getCurrentWidth());
     window.addEventListener('resize', updateDimension);
