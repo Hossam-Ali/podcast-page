@@ -19,7 +19,7 @@ export const TopEpisodes = ({ apiEpisodes, query }: topEpisodesProps) => {
     'Add to My Queue',
     'divider',
     'Go to episode',
-    'Go to prodcast',
+    'Go to podcast',
     'divider',
     'Download file',
   ];
@@ -27,7 +27,7 @@ export const TopEpisodes = ({ apiEpisodes, query }: topEpisodesProps) => {
   return (
     <div className="top-episodes">
       <div className="header">
-        <h4 className="title">Top prodcast for {query}</h4>
+        <h4 className="title">Top podcast for {query}</h4>
         <div className="action-buttons">
           <Dropdown items={dropdownHeaderItems} />
         </div>

@@ -15,7 +15,7 @@ export const Dropdown = ({ items }: dropdownProps) => (
       </summary>
       <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
         {items.map((val: string) => {
-          if (val === 'divider') return <div className="divider" />;
+          if (val === 'divider') return <div className="divider" key={val} />;
           return (
             <li key={val}>
               <a>{val}</a>

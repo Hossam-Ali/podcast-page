@@ -16,11 +16,11 @@ export const TopPodcasts = ({ apiPodcasts, query }: topPodcastProps) => {
   const dropdownResultsItems = [
     'Add to My Prodacst',
     'divider',
-    'Go to Prodcast',
+    'Go to Podcast',
     'divider',
-    'Share prodcast',
+    'Share podcast',
     'divider',
-    'Hide prodcast',
+    'Hide podcast',
   ];
 
   const handleLeftArrow = (): void => {
@@ -34,9 +34,9 @@ export const TopPodcasts = ({ apiPodcasts, query }: topPodcastProps) => {
   };
 
   return (
-    <div className="top-prodcasts">
+    <div className="top-podcasts">
       <div className="header">
-        <h4 className="title">Top prodcast for {query}</h4>
+        <h4 className="title">Top podcast for {query}</h4>
         <div className="action-buttons">
           <Arrows leftArrow={handleLeftArrow} rightArrow={handleRightArrow} />
           <Dropdown items={dropdownHeaderItems} />
