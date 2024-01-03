@@ -32,7 +32,7 @@ export const TopEpisodes = ({ apiEpisodes, query }: topEpisodesProps) => {
           <Dropdown items={dropdownHeaderItems} />
         </div>
       </div>
-      <div className="results-grid">
+      <div className="results-grid grid-cols-3">
         {apiEpisodes?.map((val: any) => (
           <div className="result-container" key={val.id}>
             <Image src={val.image} alt="temp" width={50} height={50} />
