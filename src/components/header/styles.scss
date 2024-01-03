@@ -1,0 +1,76 @@
+.header-component {
+  @media screen and (max-width: 768px) {
+    & .header {
+      left: 0 !important;
+    }
+  }
+  & .header {
+    position: fixed;
+    top: 0;
+    left: 225px;
+    right: 0;
+    height: 50px;
+    z-index: 10005;
+    background: hsla(234, 28%, 12%, 98%);
+    padding: 0px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .input {
+    flex: 1 1 auto;
+    background: hsla(238, 27%, 12%, 50%);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    height: 32px;
+    outline: none;
+    border: none;
+
+    & input {
+      padding: 7px 10px;
+      font-size: 14px;
+      display: block;
+      width: 100%;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: hsla(238, 27%, 12%, 50%);
+      -webkit-backdrop-filter: blur(5px);
+      backdrop-filter: blur(5px);
+      color: hsl(242, 3%, 55%);
+      border-radius: 10px;
+      outline: none;
+    }
+
+    & input:focus {
+      font-weight: 500;
+      border-color: #7b7bf0;
+      color: white;
+    }
+  }
+
+  & .input:focus {
+    outline-style: none;
+  }
+  .action-buttons {
+    .btn {
+      font-size: 13px;
+      font-weight: 500;
+      padding: 7px 12px;
+      margin-right: 5px;
+      background: linear-gradient(rgb(64, 103, 140), rgb(44, 83, 120));
+      color: white;
+      border: none;
+      outline: 0;
+      box-shadow: rgba(255, 255, 255, 0) 0px 1px 1px inset;
+      height: 29px;
+      min-height: unset;
+    }
+    .btn:active {
+      filter: brightness(0.8);
+    }
+    .btn:hover {
+      filter: brightness(1.25);
+    }
+  }
+}
