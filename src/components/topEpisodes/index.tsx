@@ -25,20 +25,26 @@ export const TopEpisodes = ({ apiEpisodes, query }: topEpisodesProps) => {
   ];
 
   return (
-    <div className="top-episodes">
-      <div className="header">
-        <h4 className="title">Top podcast for {query}</h4>
-        <div className="action-buttons">
+    <div className="top-episodes mt-4 mb-12 relative">
+      <div className="header flex justify-between pt-2.5 px-5">
+        <h4 className="title font-semibold text-base">
+          Top episodes {query && 'for'} {query}
+        </h4>
+        <div className="flex">
           <Dropdown items={dropdownHeaderItems} />
         </div>
       </div>
-      <div className="results-grid grid-cols-3">
+      <div className="results-grid grid grid-cols-3 my-0 mx-5	">
         {apiEpisodes?.map((val: any) => (
-          <div className="result-container" key={val.id}>
+          <div className="result-container flex" key={val.id}>
             <Image src={val.image} alt="temp" width={50} height={50} />
-            <div className="info">
-              <h6 className="name">{val.name}</h6>
-              <p className="author">{val.podcastName}</p>
+            <div className="w-full my-0 mx-2.5">
+              <h6 className="name text-sm font-medium truncate mb-1 inline-block float-left clear-left">
+                {val.name}
+              </h6>
+              <p className="author text-xs font-medium truncate inline-block float-left	clear-left max-w-full">
+                {val.podcastName}
+              </p>
             </div>
             <div className="dropdown">
               <Dropdown items={dropdownResultsItems} />

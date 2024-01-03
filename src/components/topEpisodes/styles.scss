@@ -1,22 +1,7 @@
 .top-episodes {
-  margin-top: 1rem;
-  margin-bottom: 3rem;
-  position: relative;
-
   & .header {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 20px 5px;
+    padding-bottom: 5px;
     border-bottom: 1px solid hsl(242, 10%, 20%);
-
-    & .action-buttons {
-      display: flex;
-    }
-
-    & .title {
-      font-weight: 600;
-      font-size: 16px;
-    }
   }
 
   @media screen and (max-width: 768px) {
@@ -40,9 +25,7 @@
   }
 
   & .results-grid {
-    display: grid;
     gap: 15px;
-    margin: 0px 20px;
   }
 
   & .result-container:hover {
@@ -56,46 +39,16 @@
   }
 
   & .result-container {
-    display: flex;
     padding: 5px 5px 2px;
     border-bottom: 1px solid hsl(242, 10%, 20%);
 
-    & img {
-      width: 50px;
-      height: 50px;
-    }
-
-    & .info {
-      margin: 0px 10px;
-      width: 100%;
-    }
-
     & .name {
-      font-size: 14px;
-      font-weight: 500;
-      overflow: hidden;
-      white-space: nowrap;
-      margin-bottom: 4px;
-      display: inline-block;
       color: white;
-      float: left;
-      clear: left;
-      max-width: 100%;
       text-decoration: none;
-      text-overflow: ellipsis;
       max-width: 150px;
     }
 
     & .author {
-      font-weight: 500;
-      font-size: 12px;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      float: left;
-      max-width: 100%;
-      clear: left;
-      display: inline-block;
       text-decoration: none;
       color: rgb(207, 129, 99);
     }

@@ -15,7 +15,7 @@ export const Header = ({ handleSearchData }: headerProps) => {
   const dropdownItems = [
     'Settings',
     'divider',
-    'bout Podbay',
+    'About Podbay',
     'Podbay apps (Beta)',
     'What&apos;s New',
     'Podcaster FAQ',
@@ -37,13 +37,9 @@ export const Header = ({ handleSearchData }: headerProps) => {
     return () => window.removeEventListener('resize', updateDimension);
   }, [screenSize]);
 
-  if (screenSize < 768) {
-    dropdownItems.unshift('Log in', 'Sign up');
-  }
-
   return (
     <div className="header-component">
-      <div className="header">
+      <div className="header flex justify-between fixed top-0 right-0 py-0 px-2.5 items-center">
         {screenSize < 768 && <Image src={Logo} alt="logo" className="mr-2" />}
         {screenSize > 450 && <Arrows />}
         <div className="input">
@@ -61,8 +57,8 @@ export const Header = ({ handleSearchData }: headerProps) => {
         <div className="action-buttons">
           {screenSize >= 768 && (
             <>
-              <button className="btn">Log in</button>
-              <button className="btn">Sign up</button>
+              <button className="btn font-medium py-3">Log in</button>
+              <button className="btn font-medium py-3">Sign up</button>
             </>
           )}
           <Dropdown items={dropdownItems} />

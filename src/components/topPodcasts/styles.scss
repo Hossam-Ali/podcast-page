@@ -1,76 +1,43 @@
 .top-podcasts {
-  position: relative;
   & .header {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 20px 5px;
+    padding-bottom: 5px;
     border-bottom: 1px solid hsl(242, 10%, 20%);
-
-    & .action-buttons {
-      display: flex;
-    }
-
-    & .title {
-      font-weight: 600;
-      font-size: 16px;
-    }
-  }
-  .reults {
-    position: relative;
-  }
-  & .result-container {
-    min-width: 216px;
   }
 
   & .results-section {
-    display: flex;
-    padding: 10px 20px 5px;
-    position: relative;
-    overflow-x: auto;
-    overflow-y: hidden;
-    will-change: transform;
+    padding-bottom: 5px;
     direction: ltr;
-    scroll-behavior: smooth;
     transition: scroll 0.3s ease-in-out;
     height: 290px;
 
     & > div {
-      margin-right: 10px;
+      min-width: 216px;
 
       & .name {
-        font-size: 14px;
-        font-weight: 600;
         color: white;
         display: -webkit-box;
         -webkit-line-clamp: 1;
         -webkit-box-orient: vertical;
-        overflow: hidden;
         margin-bottom: 2px;
-        cursor: pointer;
       }
 
       & .author {
-        font-size: 12px;
-        font-weight: 600;
         color: rgb(227, 189, 113);
         display: -webkit-box;
         -webkit-line-clamp: 1;
         -webkit-box-orient: vertical;
-        overflow: hidden;
-        cursor: pointer;
       }
     }
   }
 
   & .bottom-info {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 8px;
     .dropdown {
       margin-right: -10px;
+
       img {
         opacity: 0.5;
       }
+
       &.dropdown:hover {
         img {
           opacity: 1;
@@ -78,6 +45,7 @@
       }
     }
   }
+
   ::-webkit-scrollbar {
     width: 6px;
     height: 6px;

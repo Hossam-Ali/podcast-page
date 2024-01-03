@@ -5,17 +5,10 @@
     }
   }
   & .header {
-    position: fixed;
-    top: 0;
     left: 225px;
-    right: 0;
     height: 50px;
     z-index: 10005;
     background: hsla(234, 28%, 12%, 98%);
-    padding: 0px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
   }
 
   .input {
@@ -31,7 +24,6 @@
       padding: 7px 10px;
       font-size: 14px;
       display: block;
-      width: 100%;
       text-align: center;
       border: 1px solid rgba(255, 255, 255, 0.25);
       background: hsla(238, 27%, 12%, 50%);
@@ -55,8 +47,8 @@
   .action-buttons {
     .btn {
       font-size: 13px;
-      font-weight: 500;
-      padding: 7px 12px;
+      padding-top: 7px;
+      padding-bottom: 7px;
       margin-right: 5px;
       background: linear-gradient(rgb(64, 103, 140), rgb(44, 83, 120));
       color: white;

@@ -10,13 +10,14 @@ interface arrowProps {
 }
 
 export const Arrows = ({ leftArrow, rightArrow }: arrowProps) => (
-  <div className="arrows">
+  <div className="arrows flex">
     <Image
       src={LeftArrowSVG}
       alt="left arrow"
       width={22}
       height={22}
       onClick={leftArrow && leftArrow}
+      className="cursor-pointer opacity-50"
     />
     <Image
       src={RightArrowSVG}
@@ -24,6 +25,7 @@ export const Arrows = ({ leftArrow, rightArrow }: arrowProps) => (
       width={22}
       height={22}
       onClick={rightArrow && rightArrow}
+      className="cursor-pointer opacity-50"
     />
   </div>
 );

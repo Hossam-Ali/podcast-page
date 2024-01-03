@@ -1,10 +1,5 @@
 .dropdown {
-  top: 0;
-  vertical-align: middle;
-
   .btn-dropdown {
-    cursor: pointer;
-    background: transparent;
     display: inline-block !important;
   }
 
@@ -16,7 +11,6 @@
       rgb(64, 64, 128),
       rgb(107, 64, 128)
     );
-    position: absolute;
     width: 200px;
     z-index: 1000000;
     padding: 5px;
@@ -40,17 +34,8 @@
     li {
       color: white;
       a {
-        font-size: 14px;
-        text-align: left;
-        width: 100%;
-        cursor: pointer;
         border-radius: 5px;
-        padding: 8px 12px;
-        display: block;
-        white-space: nowrap;
-        overflow: hidden;
         word-break: break-word;
-        text-overflow: ellipsis;
       }
     }
   }
@@ -64,6 +49,5 @@
     );
     margin: 2px 5px;
     height: 1px;
-    display: block;
   }
 }

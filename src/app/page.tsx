@@ -85,48 +85,80 @@ export default function Home() {
           aria-label="close sidebar"
           className="drawer-overlay"
         />
-        <ul className="menu p-4 w-100 min-h-full bg-base-200 text-base-content">
+        <ul className="menu p-4 w-100 min-h-full bg-base-200 text-base-content overflow-y-hidden">
           <Image
             src={BrandIcon}
             alt="Brand"
             width={45}
             height={50}
-            className="mb-6"
+            className="mb-6 mr-2"
           />
           <li>
-            <a>
-              <Image src={HomeSVG} alt="Home" width={18} height={16} />
+            <a className="flex text-sm font-medium cursor-pointer relative">
+              <Image
+                src={HomeSVG}
+                alt="Home"
+                width={18}
+                height={16}
+                className="mr-2"
+              />
               Home
             </a>
           </li>
           <li>
-            <a>
-              <Image src={DiscoverSVG} alt="Discover" width={18} height={16} />
+            <a className="flex text-sm font-medium cursor-pointer relative">
+              <Image
+                src={DiscoverSVG}
+                alt="Discover"
+                width={18}
+                height={16}
+                className="mr-2"
+              />
               Discover
             </a>
           </li>
-          <li className="section-header">YOUR STUFF</li>
+          <li className="section-header mt-5 inline-block align-middle tracking-normal text-xs font-bold uppercase">
+            YOUR STUFF
+          </li>
           <li>
-            <a>
-              <Image src={QueueSVG} alt="Queue" width={18} height={16} />
+            <a className="flex text-sm font-medium cursor-pointer relative">
+              <Image
+                src={QueueSVG}
+                alt="Queue"
+                width={18}
+                height={16}
+                className="mr-2"
+              />
               My Queue
             </a>
           </li>
           <li>
-            <a>
-              <Image src={PodcastsSVG} alt="Podcasts" width={18} height={16} />
+            <a className="flex text-sm font-medium cursor-pointer relative">
+              <Image
+                src={PodcastsSVG}
+                alt="Podcasts"
+                width={18}
+                height={16}
+                className="mr-2"
+              />
               My Podcasts
             </a>
           </li>
           <li>
-            <a>
-              <Image src={RecentsSVG} alt="Recents" width={18} height={16} />
+            <a className="flex text-sm font-medium cursor-pointer relative">
+              <Image
+                src={RecentsSVG}
+                alt="Recents"
+                width={18}
+                height={16}
+                className="mr-2"
+              />
               Recents
             </a>
           </li>
           <li>
-            <p className="sidebar-footer">
-              Podbay v2.9.6 by
+            <p className="sidebar-footer block cursor-default text-xs px-3.5 pb-3 pt-0">
+              Podbay v2.9.6 by{' '}
               <a
                 href="https://fancysoups.com"
                 target="_blank"
