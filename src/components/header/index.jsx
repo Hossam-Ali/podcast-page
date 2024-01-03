@@ -7,9 +7,7 @@ import { Arrows } from '../arrows';
 import './styles.scss';
 
 export const Header = () => {
-  const getCurrentWidth = () => window?.innerWidth;
-
-  const [screenSize, setScreenSize] = useState(getCurrentWidth());
+  const [screenSize, setScreenSize] = useState(0);
   const dropdownItems = [
     'Settings',
     'divider',
@@ -26,6 +24,8 @@ export const Header = () => {
   ];
 
   useEffect(() => {
+    const getCurrentWidth = () => window.innerWidth;
+
     const updateDimension = () => setScreenSize(getCurrentWidth());
     window.addEventListener('resize', updateDimension);
 
