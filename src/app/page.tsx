@@ -1,5 +1,7 @@
-import React from 'react';
+'use client';
+import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
+import _debounce from 'lodash.debounce';
 import BrandIcon from '../assets/icons/brand-icon.svg';
 import HomeSVG from '../assets/icons/home.svg';
 import DiscoverSVG from '../assets/icons/discover.svg';
@@ -7,19 +9,63 @@ import PodcastsSVG from '../assets/icons/podcasts.svg';
 import QueueSVG from '../assets/icons/queue.svg';
 import RecentsSVG from '../assets/icons/recents.svg';
 import { Header } from '../components/header';
-import { TopProdcasts } from '../components/topProdcasts';
+import { TopPodcasts } from '../components/topPodcasts';
 import { TopEpisodes } from '../components/topEpisodes';
 import './styles.scss';
 
 export default function Home() {
+  const [apiEpisodes, setApiEpisodes] = useState(null as any);
+  const [apiPodcasts, setApiPodcasts] = useState(null as any);
+  const [query, SetQuery] = useState('');
+
+  useEffect(() => {
+    handleDebounceFn();
+  }, []);
+
+  const handleAPIData = (data: any) => {
+    const values = Object.values(data)[0] as any;
+    const podcasts = values.findIndex(
+      (val: any) => val.slug === 'shows'
+    ) as number;
+    const episodes = values.findIndex(
+      (val: any) => val.slug === 'episodes'
+    ) as number;
+    if (podcasts >= 0) {
+      setApiPodcasts(values[podcasts].items[0].items);
+    }
+    if (episodes >= 0) {
+      setApiEpisodes(values[episodes].items[0].items);
+    }
+  };
+
+  const handleDebounceFn = async (query = '') => {
+    await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/client/api/search?search=${query}`,
+      {
+        cache: 'force-cache',
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => handleAPIData(data))
+      .catch((e) => console.error('error', e));
+  };
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const debounceFn = useCallback(_debounce(handleDebounceFn, 500), []);
+
+  const handleSearchData = (query: string) => {
+    SetQuery(query);
+    debounceFn(query);
+  };
+
   return (
     <div className="drawer md:drawer-open left-sidebar">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content">
-        <Header />
+        <Header handleSearchData={handleSearchData} />
         <div className="main-content">
-          <TopProdcasts />
-          <TopEpisodes />
+          <TopPodcasts apiPodcasts={apiPodcasts} query={query} />
+          <TopEpisodes apiEpisodes={apiEpisodes} query={query} />
         </div>
       </div>
       <div className="drawer-side">

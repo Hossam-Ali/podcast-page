@@ -6,7 +6,11 @@ import { Dropdown } from '../dropdown';
 import { Arrows } from '../arrows';
 import './styles.scss';
 
-export const Header = () => {
+interface headerProps {
+  handleSearchData: (value: string) => void;
+}
+
+export const Header = ({ handleSearchData }: headerProps) => {
   const [screenSize, setScreenSize] = useState(0);
   const dropdownItems = [
     'Settings',
@@ -51,6 +55,7 @@ export const Header = () => {
                 : 'Search'
             }
             className="input input-bordered w-full"
+            onChange={(e) => handleSearchData(e.target.value)}
           />
         </div>
         <div className="action-buttons">
