@@ -7,7 +7,7 @@ import { Arrows } from '../arrows';
 import './styles.scss';
 
 export const Header = () => {
-  const getCurrentWidth = () => window.innerWidth;
+  const getCurrentWidth = () => window?.innerWidth;
 
   const [screenSize, setScreenSize] = useState(getCurrentWidth());
   const dropdownItems = [
