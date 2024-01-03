@@ -1,0 +1,97 @@
+.top-episodes {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  position: relative;
+
+  & .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px 5px;
+    border-bottom: 1px solid hsl(242, 10%, 20%);
+
+    & .action-buttons {
+      display: flex;
+    }
+
+    & .title {
+      font-weight: 600;
+      font-size: 16px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    & .results-grid {
+      display: block !important;
+    }
+  }
+
+  & .results-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 0px 20px;
+  }
+
+  & .result-container:hover {
+    background: rgba(0, 0, 0, 0.4);
+
+    & .dropdown {
+      & img {
+        opacity: 1;
+      }
+    }
+  }
+
+  & .result-container {
+    display: flex;
+    padding: 5px 5px 2px;
+    border-bottom: 1px solid hsl(242, 10%, 20%);
+
+    & img {
+      width: 50px;
+      height: 50px;
+    }
+
+    & .info {
+      margin: 0px 10px;
+      width: 100%;
+    }
+
+    & .name {
+      font-size: 14px;
+      font-weight: 500;
+      overflow: hidden;
+      white-space: nowrap;
+      margin-bottom: 4px;
+      display: inline-block;
+      color: white;
+      float: left;
+      clear: left;
+      max-width: 100%;
+      text-decoration: none;
+      text-overflow: ellipsis;
+    }
+
+    & .author {
+      font-weight: 500;
+      font-size: 12px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      float: left;
+      max-width: 100%;
+      clear: left;
+      display: inline-block;
+      text-decoration: none;
+      color: rgb(207, 129, 99);
+    }
+
+    & .dropdown {
+      width: 20px;
+
+      & img {
+        opacity: 0.25;
+      }
+    }
+  }
+}

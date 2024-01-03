@@ -227,7 +227,7 @@ export const TopProdcasts = () => {
   return (
     <div className="top-prodcasts">
       <div className="header">
-        <h4>Top prodcast for testing</h4>
+        <h4 className="title">Top prodcast for testing</h4>
         <div className="action-buttons">
           <Arrows leftArrow={handleLeftArrow} rightArrow={handleRightArrow} />
           <Dropdown items={dropdownHeaderItems} />
@@ -238,9 +238,9 @@ export const TopProdcasts = () => {
         <div className="list">
           <div className="results">
             <div className="results-section" ref={sliderRef}>
-              {results.map((val) => {
+              {results.map((val, ind) => {
                 return (
-                  <div key={val.name} className="result-container">
+                  <div key={ind} className="result-container">
                     <Image src={Test} alt="logo" width={216} height={216} />
                     <div className="bottom-info">
                       <div className="info">

@@ -8,6 +8,7 @@ import QueueSVG from '../assets/icons/queue.svg';
 import RecentsSVG from '../assets/icons/recents.svg';
 import { Header } from '../components/header';
 import { TopProdcasts } from '../components/topProdcasts';
+import { TopEpisodes } from '../components/topEpisodes';
 import './styles.scss';
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
         <Header />
         <div className="main-content">
           <TopProdcasts />
+          <TopEpisodes />
         </div>
       </div>
       <div className="drawer-side">

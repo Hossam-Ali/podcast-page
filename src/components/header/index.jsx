@@ -40,7 +40,7 @@ export const Header = () => {
   return (
     <div className="header-component">
       <div className="header">
-        {screenSize < 769 && <Image src={Logo} alt="logo" className="mr-2" />}
+        {screenSize < 768 && <Image src={Logo} alt="logo" className="mr-2" />}
         {screenSize > 450 && <Arrows />}
         <div className="input">
           <input

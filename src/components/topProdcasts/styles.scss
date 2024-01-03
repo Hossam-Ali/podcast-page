@@ -9,6 +9,11 @@
     & .action-buttons {
       display: flex;
     }
+
+    & .title {
+      font-weight: 600;
+      font-size: 16px;
+    }
   }
   .reults {
     position: relative;
