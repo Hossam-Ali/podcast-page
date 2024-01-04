@@ -25,12 +25,10 @@ export const TopEpisodes = ({ apiEpisodes, query }: topEpisodesProps) => {
     'Download file',
   ];
 
-  console.log('apiEpisodes', apiEpisodes);
-
   return (
     <div className="top-episodes mt-4 mb-12 relative">
       <div className="header flex justify-between pt-2.5 px-5 items-center">
-        <h4 className="title font-semibold text-base">
+        <h4 className="title font-semibold text-base text-white">
           Top episodes {query && 'for'} {query}
         </h4>
         <div className="flex">

@@ -11,6 +11,10 @@
     background: hsla(234, 28%, 12%, 98%);
   }
 
+  input:focus::placeholder {
+    color: transparent;
+  }
+
   .input {
     flex: 1 1 auto;
     background: hsla(238, 27%, 12%, 50%);

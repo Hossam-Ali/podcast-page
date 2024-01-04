@@ -2,6 +2,18 @@
   & .header {
     padding-bottom: 5px;
     border-bottom: 1px solid hsl(242, 10%, 20%);
+    position: sticky;
+    z-index: 100;
+    top: 50px;
+    background: rgba(22, 23, 39, 0.98);
+  }
+
+  & .grid-view {
+    grid-template-columns: repeat(6, 1fr);
+    height: 100% !important;
+    gap: 20px 0px;
+    margin-left: 15px;
+    margin-top: 15px;
   }
 
   & .result-container {

@@ -54,7 +54,7 @@ export const Header = ({ handleSearchData }: headerProps) => {
             onChange={(e) => handleSearchData(e.target.value)}
           />
         </div>
-        <div className="action-buttons">
+        <div className="action-buttons align-middle flex">
           {screenSize >= 768 && (
             <>
               <button className="btn font-medium py-3">Log in</button>

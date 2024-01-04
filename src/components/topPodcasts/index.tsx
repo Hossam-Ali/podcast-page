@@ -1,9 +1,9 @@
 'use client';
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import Image from 'next/image';
+import randomColor from 'randomcolor';
 import { Arrows } from '../arrows';
 import { Dropdown } from '../dropdown';
-import randomColor from 'randomcolor';
 import './styles.scss';
 
 interface topPodcastProps {
@@ -12,6 +12,7 @@ interface topPodcastProps {
 }
 
 export const TopPodcasts = ({ apiPodcasts, query }: topPodcastProps) => {
+  const [isGrid, setIsGrid] = useState(false);
   const sliderRef = useRef(null);
   const dropdownHeaderItems = ['Switch layout to Grid'];
   const dropdownResultsItems = [
@@ -33,15 +34,22 @@ export const TopPodcasts = ({ apiPodcasts, query }: topPodcastProps) => {
     container.scrollLeft += 800;
   };
 
+  const handleClickOnDropdown = () => setIsGrid((isGrid) => !isGrid);
+
   return (
     <div className="top-podcasts relative">
       <div className="header flex justify-between pt-2.5 px-2.5 items-center">
-        <h4 className="text-base font-semibold">
+        <h4 className="text-base font-semibold text-white">
           Top podcast {query && 'for'} {query}
         </h4>
         <div className="flex">
-          <Arrows leftArrow={handleLeftArrow} rightArrow={handleRightArrow} />
-          <Dropdown items={dropdownHeaderItems} />
+          {!isGrid && (
+            <Arrows leftArrow={handleLeftArrow} rightArrow={handleRightArrow} />
+          )}
+          <Dropdown
+            items={dropdownHeaderItems}
+            handleClickOnDropdown={handleClickOnDropdown}
+          />
         </div>
       </div>
 
@@ -49,7 +57,11 @@ export const TopPodcasts = ({ apiPodcasts, query }: topPodcastProps) => {
         <div className="list">
           <div className="relative">
             <div
-              className="results-section flex pt-2.5 px-5 relative overflow-x-auto overflow-y-hidden will-change-transform scroll-smooth"
+              className={`results-section ${
+                isGrid
+                  ? 'grid grid-view'
+                  : 'flex pt-2.5 px-5 relative overflow-x-auto overflow-y-hidden will-change-transform scroll-smooth'
+              }`}
               ref={sliderRef}
             >
               {apiPodcasts?.map((val: any) => (
@@ -60,7 +72,7 @@ export const TopPodcasts = ({ apiPodcasts, query }: topPodcastProps) => {
                     width={216}
                     height={216}
                   />
-                  <div className="bottom-info flex justify-between mt-2">
+                  <div className="bottom-info flex justify-between items-end">
                     <div className="info">
                       <a className="name cursor-pointer overflow-hidden text-sm font-semibold">
                         {val.name}

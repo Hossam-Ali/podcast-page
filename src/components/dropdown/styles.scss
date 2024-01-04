@@ -1,5 +1,5 @@
-.dropdown {
-  width: 28px;
+.dropdown-component {
+  width: 18px;
 
   .test {
     background: transparent !important;
@@ -46,7 +46,7 @@
     }
     li {
       color: white;
-      a {
+      p {
         border-radius: 5px;
         word-break: break-word;
       }
