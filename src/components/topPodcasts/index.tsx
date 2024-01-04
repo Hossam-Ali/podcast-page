@@ -3,6 +3,7 @@ import React, { useRef } from 'react';
 import Image from 'next/image';
 import { Arrows } from '../arrows';
 import { Dropdown } from '../dropdown';
+import randomColor from 'randomcolor';
 import './styles.scss';
 
 interface topPodcastProps {
@@ -34,7 +35,7 @@ export const TopPodcasts = ({ apiPodcasts, query }: topPodcastProps) => {
 
   return (
     <div className="top-podcasts relative">
-      <div className="header flex justify-between pt-2.5 px-2.5">
+      <div className="header flex justify-between pt-2.5 px-2.5 items-center">
         <h4 className="text-base font-semibold">
           Top podcast {query && 'for'} {query}
         </h4>
@@ -52,7 +53,7 @@ export const TopPodcasts = ({ apiPodcasts, query }: topPodcastProps) => {
               ref={sliderRef}
             >
               {apiPodcasts?.map((val: any) => (
-                <div key={val.id} className="result-container mr-2.5">
+                <div key={val.id} className="result-container mr-3.5">
                   <Image
                     src={`${val.image}`}
                     alt="logo"
@@ -64,7 +65,10 @@ export const TopPodcasts = ({ apiPodcasts, query }: topPodcastProps) => {
                       <a className="name cursor-pointer overflow-hidden text-sm font-semibold">
                         {val.name}
                       </a>
-                      <h5 className="author cursor-pointer overflow-hidden text-xs font-semibold">
+                      <h5
+                        className="author cursor-pointer overflow-hidden text-xs font-semibold"
+                        style={{ color: randomColor() }}
+                      >
                         {val.author}
                       </h5>
                     </div>

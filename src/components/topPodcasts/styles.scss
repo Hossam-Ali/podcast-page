@@ -4,14 +4,20 @@
     border-bottom: 1px solid hsl(242, 10%, 20%);
   }
 
+  & .result-container {
+    & img {
+      border-radius: 3px;
+    }
+  }
+
   & .results-section {
     padding-bottom: 5px;
     direction: ltr;
     transition: scroll 0.3s ease-in-out;
-    height: 290px;
+    height: 280px;
 
     & > div {
-      min-width: 216px;
+      min-width: 195px;
 
       & .name {
         color: white;
