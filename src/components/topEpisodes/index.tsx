@@ -25,6 +25,8 @@ export const TopEpisodes = ({ apiEpisodes, query }: topEpisodesProps) => {
     'Download file',
   ];
 
+  console.log('apiEpisodes', apiEpisodes);
+
   return (
     <div className="top-episodes mt-4 mb-12 relative">
       <div className="header flex justify-between pt-2.5 px-5 items-center">
