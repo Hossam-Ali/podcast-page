@@ -11,6 +11,7 @@ import RecentsSVG from '../assets/icons/recents.svg';
 import { Header } from '../components/header';
 import { TopPodcasts } from '../components/topPodcasts';
 import { TopEpisodes } from '../components/topEpisodes';
+import { handleRandomColor } from '../utils/randomColor';
 import './styles.scss';
 
 export default function Home() {
@@ -29,14 +30,25 @@ export default function Home() {
     const podcasts = values.findIndex(
       (val: any) => val.slug === 'shows'
     ) as number;
+
     const episodes = values.findIndex(
       (val: any) => val.slug === 'episodes'
     ) as number;
+
     if (podcasts >= 0) {
-      setApiPodcasts(values[podcasts].items[0].items);
+      const newValues = handleRandomColor(
+        values[podcasts].items[0].items,
+        'author'
+      );
+      setApiPodcasts(newValues);
     }
+
     if (episodes >= 0) {
-      setApiEpisodes(values[episodes].items[0].items);
+      const newValues = handleRandomColor(
+        values[episodes].items[0].items,
+        'podcastName'
+      );
+      setApiEpisodes(newValues);
     }
   };
 

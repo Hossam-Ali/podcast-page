@@ -1,7 +1,6 @@
 'use client';
 import React, { useRef, useState } from 'react';
 import Image from 'next/image';
-import randomColor from 'randomcolor';
 import { Arrows } from '../arrows';
 import { Dropdown } from '../dropdown';
 import './styles.scss';
@@ -65,9 +64,9 @@ export const TopPodcasts = ({ apiPodcasts, query }: topPodcastProps) => {
               ref={sliderRef}
             >
               {apiPodcasts?.map((val: any) => (
-                <div key={val.id} className="result-container mr-3.5">
+                <div key={val.item.id} className="result-container mr-3.5">
                   <Image
-                    src={`${val.image}`}
+                    src={`${val.item.image}`}
                     alt="logo"
                     width={216}
                     height={216}
@@ -75,13 +74,13 @@ export const TopPodcasts = ({ apiPodcasts, query }: topPodcastProps) => {
                   <div className="bottom-info flex justify-between items-end">
                     <div className="info">
                       <a className="name cursor-pointer overflow-hidden text-sm font-semibold">
-                        {val.name}
+                        {val.item.name}
                       </a>
                       <h5
                         className="author cursor-pointer overflow-hidden text-xs font-semibold"
-                        style={{ color: randomColor() }}
+                        style={{ color: val.color }}
                       >
-                        {val.author}
+                        {val.item.author}
                       </h5>
                     </div>
                     <Dropdown items={dropdownResultsItems} />
