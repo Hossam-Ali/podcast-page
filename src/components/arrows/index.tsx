@@ -18,6 +18,7 @@ export const Arrows = ({ leftArrow, rightArrow }: arrowProps) => (
       height={22}
       onClick={leftArrow && leftArrow}
       className="cursor-pointer opacity-50 left-arrow"
+      id="left-arrow"
     />
     <Image
       src={RightArrowSVG}
@@ -26,6 +27,7 @@ export const Arrows = ({ leftArrow, rightArrow }: arrowProps) => (
       height={22}
       onClick={rightArrow && rightArrow}
       className="cursor-pointer opacity-50"
+      id="right-arrow"
     />
   </div>
 );
