@@ -85,14 +85,10 @@ export default function Home() {
           aria-label="close sidebar"
           className="drawer-overlay"
         />
-        <ul className="menu p-4 w-100 min-h-full bg-base-200 text-base-content overflow-y-hidden">
-          <Image
-            src={BrandIcon}
-            alt="Brand"
-            width={45}
-            height={50}
-            className="mb-6 mr-2"
-          />
+        <ul className="menu w-100 min-h-full bg-base-200 text-base-content overflow-y-hidden">
+          <div className="brand-container mb-6 ml-3 mt-2">
+            <Image src={BrandIcon} alt="Brand" width={45} height={50} />
+          </div>
           <li>
             <a className="flex text-sm font-medium cursor-pointer relative">
               <Image

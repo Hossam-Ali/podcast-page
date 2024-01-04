@@ -39,7 +39,7 @@ export const Header = ({ handleSearchData }: headerProps) => {
 
   return (
     <div className="header-component">
-      <div className="header flex justify-between fixed top-0 right-0 py-0 px-2.5 items-center">
+      <div className="header flex justify-between fixed top-0 right-0 py-0 px-5 items-center">
         {screenSize < 768 && <Image src={Logo} alt="logo" className="mr-2" />}
         {screenSize > 450 && <Arrows />}
         <div className="input">

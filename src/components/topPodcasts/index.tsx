@@ -38,7 +38,7 @@ export const TopPodcasts = ({ apiPodcasts, query }: topPodcastProps) => {
 
   return (
     <div className="top-podcasts relative">
-      <div className="header flex justify-between pt-2.5 px-2.5 items-center">
+      <div className="header flex justify-between pt-2.5 px-5 items-center">
         <h4 className="text-base font-semibold text-white">
           Top podcast {query && 'for'} {query}
         </h4>

@@ -10,7 +10,7 @@
 
     & .section-header {
       margin-bottom: 5px;
-      margin-left: 3px;
+      margin-left: 10px;
       color: rgb(163, 163, 168);
     }
 
@@ -20,9 +20,12 @@
 
     li {
       > a {
-        padding: 15px;
+        padding: 10px 15px;
         text-decoration: none;
         color: white;
+        img {
+          height: 16px;
+        }
       }
 
       & a:hover,
@@ -53,6 +56,7 @@
       transition: color 150ms ease 0s;
     }
   }
+
   a:hover::before {
     filter: blur(10px);
     background: radial-gradient(
