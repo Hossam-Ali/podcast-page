@@ -43,6 +43,15 @@
           opacity: 1;
         }
       }
+      & .dropdown-content {
+        transform: translateY(-200px);
+
+        &.dropdown-content::after {
+          bottom: -10px;
+          border-bottom-color: transparent;
+          border-top-color: hsl(279, 23%, 46%);
+        }
+      }
     }
   }
 

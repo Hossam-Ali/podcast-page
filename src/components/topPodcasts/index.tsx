@@ -19,7 +19,6 @@ export const TopPodcasts = ({ apiPodcasts, query }: topPodcastProps) => {
     'Go to Podcast',
     'divider',
     'Share podcast',
-    'divider',
     'Hide podcast',
   ];
 

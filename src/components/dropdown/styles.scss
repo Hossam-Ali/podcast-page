@@ -1,6 +1,15 @@
 .dropdown {
-  .btn-dropdown {
-    display: inline-block !important;
+  width: 28px;
+
+  .dropdown-dots {
+    background: transparent !important;
+    border: none !important;
+    font-size: unset !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    height: 100% !important;
+    width: 100% !important;
   }
 
   .dropdown-content {
