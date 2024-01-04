@@ -10,7 +10,7 @@ interface dropdownProps {
 export const Dropdown = ({ items }: dropdownProps) => (
   <div className="dropdown top-0 align-middle">
     <details className="dropdown">
-      <summary className="m-1 btn">:</summary>
+      <summary className="m-1 btn bg-transparent test">:</summary>
       <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
         <li>
           <a>Item 1</a>

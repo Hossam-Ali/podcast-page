@@ -1,6 +1,10 @@
 .dropdown {
   width: 28px;
 
+  .test {
+    background: transparent !important;
+  }
+
   .dropdown-dots {
     background: transparent !important;
     border: none !important;
