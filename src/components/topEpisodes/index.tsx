@@ -36,21 +36,23 @@ export const TopEpisodes = ({ apiEpisodes, query }: topEpisodesProps) => {
       </div>
       <div className="results-grid grid grid-cols-3 my-0 mx-5	">
         {apiEpisodes?.map((val: any) => (
-          <div className="result-container flex" key={val.item.id}>
-            <Image src={val.item.image} alt="temp" width={50} height={50} />
-            <div className="w-full my-0 mx-2.5">
-              <h6 className="name text-sm font-medium truncate mb-1 inline-block float-left clear-left">
-                {val.item.name}
-              </h6>
-              <p
-                className="author text-xs font-medium truncate inline-block float-left	clear-left max-w-full"
-                style={{ color: val.color }}
-              >
-                {val.item.podcastName}
-              </p>
-            </div>
-            <div className="dropdown">
-              <Dropdown items={dropdownResultsItems} />
+          <div className="result-container" key={val.item.id}>
+            <div className="flex">
+              <Image src={val.item.image} alt="temp" width={50} height={50} />
+              <div className="container basis-auto shrink grow min-w-0 my-0	mx-2.5">
+                <h6 className="name font-medium	text-sm	truncate mb-1	max-w-full inline-block text-white	float-left clear-left">
+                  {val.item.name}
+                </h6>
+                <p
+                  className="author truncate mb-1	max-w-full inline-block float-left clear-left font-medium text-xs"
+                  style={{ color: val.color }}
+                >
+                  {val.item.podcastName}
+                </p>
+              </div>
+              <div className="dropdown">
+                <Dropdown items={dropdownResultsItems} />
+              </div>
             </div>
           </div>
         ))}

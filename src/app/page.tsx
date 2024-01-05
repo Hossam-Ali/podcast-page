@@ -18,7 +18,7 @@ export default function Home() {
   const [apiEpisodes, setApiEpisodes] = useState(null as any);
   const [apiPodcasts, setApiPodcasts] = useState(null as any);
   const [isLoading, setIsLoading] = useState(true);
-  const [query, SetQuery] = useState('');
+  const [query, SetQuery] = useState('فنجان');
 
   useEffect(() => {
     handleDebounceFn();
@@ -52,7 +52,8 @@ export default function Home() {
     }
   };
 
-  const handleDebounceFn = async (query = '') => {
+  const handleDebounceFn = async (query = 'فنجان') => {
+    setIsLoading(true);
     await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/client/api/search?search=${query}`,
       {
@@ -65,11 +66,14 @@ export default function Home() {
       .finally(() => setIsLoading(false));
   };
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const debounceFn = useCallback(_debounce(handleDebounceFn, 500), []);
 
   const handleSearchData = (query: string) => {
-    SetQuery(query);
+    if (query === '') {
+      SetQuery('فنجان');
+    } else {
+      SetQuery(query);
+    }
     debounceFn(query);
   };
 
