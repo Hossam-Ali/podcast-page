@@ -10,6 +10,9 @@ const inter = IBM_Plex_Sans_Arabic({
 export const metadata: Metadata = {
   title: 'Thmanyah',
   description: 'Thmanyah',
+  icons: {
+    icon: '/icon.svg',
+  },
 };
 
 export default function RootLayout({
