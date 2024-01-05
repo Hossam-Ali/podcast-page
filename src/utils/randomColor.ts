@@ -14,7 +14,10 @@ export const handleRandomColor = (data: any, unique: string) => {
       });
     } else {
       assignedColors.push({
-        color: randomColor(),
+        color: randomColor({
+          luminosity: 'light',
+          hue: 'blue',
+        }),
         item: value,
       });
     }
