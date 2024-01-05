@@ -56,6 +56,8 @@ export const TopEpisodes = ({ apiEpisodes, query }: topEpisodesProps) => {
             </div>
           </div>
         ))}
+
+        {apiEpisodes.length === 0 && <h1 className="m-auto">No Results</h1>}
       </div>
     </div>
   );

@@ -13,7 +13,12 @@ interface topPodcastProps {
 export const TopPodcasts = ({ apiPodcasts, query }: topPodcastProps) => {
   const [isGrid, setIsGrid] = useState(false);
   const sliderRef = useRef(null);
-  const dropdownHeaderItems = ['Switch layout to Grid'];
+  let dropdownHeaderItems = [];
+  if (isGrid) {
+    dropdownHeaderItems = ['Switch layout to Slider'];
+  } else {
+    dropdownHeaderItems = ['Switch layout to Grid'];
+  }
   const dropdownResultsItems = [
     'Add to My Prodacst',
     'divider',
@@ -87,6 +92,9 @@ export const TopPodcasts = ({ apiPodcasts, query }: topPodcastProps) => {
                   </div>
                 </div>
               ))}
+              {apiPodcasts.length === 0 && (
+                <h1 className="no-results">No Results</h1>
+              )}
             </div>
           </div>
         </div>

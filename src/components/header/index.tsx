@@ -37,6 +37,11 @@ export const Header = ({ handleSearchData }: headerProps) => {
     return () => window.removeEventListener('resize', updateDimension);
   }, [screenSize]);
 
+  const handleInputChange = (e: any) => {
+    localStorage.setItem('input-value', e.target.value);
+    handleSearchData(e.target.value);
+  };
+
   return (
     <div className="header-component">
       <div className="header flex justify-between fixed top-0 right-0 py-0 px-5 items-center">
@@ -45,13 +50,14 @@ export const Header = ({ handleSearchData }: headerProps) => {
         <div className="input">
           <input
             type="text"
+            value={localStorage.getItem('input-value') || ''}
             placeholder={
               screenSize > 640
                 ? 'Search through over 30 million podcasts and episodes...'
                 : 'Search'
             }
             className="input input-bordered w-full"
-            onChange={(e) => handleSearchData(e.target.value)}
+            onChange={(e) => handleInputChange(e)}
           />
         </div>
         <div className="action-buttons align-middle flex">
